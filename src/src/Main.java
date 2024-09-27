@@ -9,8 +9,8 @@ public class Main {
 
         ElementoMultimediale[] playlist = new ElementoMultimediale[5];
 
-        for(int i = 0; i < 5; i++){ System.out.println(i + 1 + ". Cosa vuoi aggiungere alla playlist?");
-
+        for (int i = 0; i < 5; i++) {
+            System.out.println(i + 1 + ". Cosa vuoi aggiungere alla playlist?");
             String mediaType = user.nextLine().toLowerCase();
             System.out.println("Titolo?");
             String title = user.nextLine();
@@ -35,49 +35,51 @@ public class Main {
                 }
             }
         }
+
         String input;
 
-int opzione;
-
         do {
+            System.out.println("Okay, ora cosa vuoi riprodurre?");
+            for (int i = 0; i < playlist.length; i++) {
+                System.out.println(i + 1 + " - " + playlist[i].getTitolo());
+            }
+            System.out.println("Premi il numero corrispondente per riprodurre o premi 0 per uscire.");
 
-            System.out.print("Scegli quale elemento eseguire (1-5) o 0 per uscire: ");
-            opzione = user.nextInt();
+            input = user.nextLine();
 
-
-            switch (opzione) {
-                case 0:
+            switch (input) {
+                case "0":
                     System.out.println("Arrivederci!");
                     break;
-                case 1:
+                case "1":
                     if (playlist[0] instanceof Riproducibile) {
                         ((Riproducibile) playlist[0]).play();
                     } else {
                         ((Static) playlist[0]).show();
                     }
                     break;
-                case 2:
+                case "2":
                     if (playlist[1] instanceof Riproducibile) {
                         ((Riproducibile) playlist[1]).play();
                     } else {
                         ((Static) playlist[1]).show();
                     }
                     break;
-                case 3:
+                case "3":
                     if (playlist[2] instanceof Riproducibile) {
                         ((Riproducibile) playlist[2]).play();
                     } else {
                         ((Static) playlist[2]).show();
                     }
                     break;
-                case 4:
+                case "4":
                     if (playlist[3] instanceof Riproducibile) {
                         ((Riproducibile) playlist[3]).play();
                     } else {
                         ((Static) playlist[3]).show();
                     }
                     break;
-                case 5:
+                case "5":
                     if (playlist[4] instanceof Riproducibile) {
                         ((Riproducibile) playlist[4]).play();
                     } else {
@@ -87,7 +89,6 @@ int opzione;
                 default:
                     System.out.println("Devi premere un numero da 1 a 5 per riprodurre o 0 per uscire!");
             }
-        } while (opzione !=0);
-  user.close();
+        } while (!Objects.equals(input, "0"));
     }
 }
