@@ -7,7 +7,7 @@ public class Immagine extends ElementoMultimediale implements Static, Visibile{
         super(titolo);
         this.luminosita = 5;
     }
-    
+
 
     @Override
     public void show() {
