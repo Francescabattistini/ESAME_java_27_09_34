@@ -3,7 +3,7 @@ package entities;
 import java.util.Random;
 
 public class Audio extends ElementoMultimediale implements Riproducibile {
- Random random = new Random()
+ Random random = new Random();
          private byte volume;
  private int durata;
   public  Audio (String titolo){
@@ -32,7 +32,7 @@ public class Audio extends ElementoMultimediale implements Riproducibile {
     }
 
     @Override
-    public Void abbassaVolume() {
+    public void abbassaVolume() {
         if (this.volume > 1) {
             this.volume--;
             System.out.println("Volume di " + this.titolo + " abbassato, il volume ora è " + this.volume);
