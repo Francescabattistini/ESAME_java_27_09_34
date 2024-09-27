@@ -12,15 +12,14 @@ public class Audio extends ElementoMultimediale implements Riproducibile {
       this.volume =5;
   }
 
-
-
-
+    //  tutti gli override li ho fatti richiamando l' interfaccia riproducibile
     @Override
     public void play() {
         for (int i = 0; i < this.durata; i++) {
             System.out.println(this.titolo + " " + "!".repeat(this.volume));
         }
     }
+
 
     @Override
     public void alzaVolume() {
