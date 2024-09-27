@@ -7,5 +7,4 @@ public abstract class ElementoMultimediale {
     }
     public String getTitolo() {return titolo;};
 
-    public abstract void play();
 }
