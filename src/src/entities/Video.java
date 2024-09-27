@@ -13,7 +13,7 @@ public class Video extends ElementoMultimediale implements Riproducibile, Visibi
         super(titolo);
         this.volume = 5;
         this.luminosita = 5;
-        this.durata = rand.nextInt(60, 120);
+        this.durata = rand.nextInt(0, 10);
     }
 
     @Override
